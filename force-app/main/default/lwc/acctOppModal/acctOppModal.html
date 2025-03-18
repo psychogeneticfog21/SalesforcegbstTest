@@ -1,0 +1,39 @@
+<!-- <template>
+    
+</template> -->
+<template>
+    <lightning-modal-header label="My Modal Heading"></lightning-modal-header>
+    <lightning-modal-body>
+        <lightning-card title="Account Details" icon-name="standard:account">
+            <div class="slds-m-bottom_medium">
+                <lightning-record-form
+                    object-api-name="Account"
+                    record-id={recordId}
+                    fields={fields}
+                    mode="view">
+                </lightning-record-form>
+                <p>Account ID: {recordId}</p>
+            </div>    
+        </lightning-card>
+
+        <lightning-card title="Related Opportunities" icon-name="standard:opportunity">
+        <div class="slds-grid slds-grid_align-end slds-m-bottom_small">
+            <lightning-button label="Delete All" variant="destructive" onclick={handleDelOpps}></lightning-button>
+            <lightning-button label="Create Opportunities" class="slds-m-left_small" variant="brand" onclick={handleCreateOpps}></lightning-button>
+        </div>
+        <lightning-datatable
+            key-field="Id"
+            data={opps}
+            columns={columns}
+            hide-checkbox-column="true"
+            onloadmore={loadMoreData}
+            >        
+        </lightning-datatable>
+        </lightning-card>
+
+        
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button label="OK" onclick={handleOk}></lightning-button>
+    </lightning-modal-footer>
+</template>
