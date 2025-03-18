@@ -18,15 +18,14 @@
 
         <lightning-card title="Related Opportunities" icon-name="standard:opportunity">
         <div class="slds-grid slds-grid_align-end slds-m-bottom_small">
-            <lightning-button label="Delete All" variant="destructive" onclick={handleDelOpps}></lightning-button>
             <lightning-button label="Create Opportunities" class="slds-m-left_small" variant="brand" onclick={handleCreateOpps}></lightning-button>
+            <lightning-button label="Delete All" variant="destructive" onclick={handleDelOpps}></lightning-button>
         </div>
         <lightning-datatable
             key-field="Id"
             data={opps}
             columns={columns}
             hide-checkbox-column="true"
-            onloadmore={loadMoreData}
             >        
         </lightning-datatable>
         </lightning-card>
